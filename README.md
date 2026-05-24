@@ -59,33 +59,13 @@ flowchart TD
 
 ## Team & Roles
 
-```mermaid
-flowchart LR
-    A[Group 7\n6 Members] --> B[Project Management\n1 member\nGantt · Milestones · Docs]
-    A --> C[Product Design\n2 members\nCAD · Topology Opt. · Simulation]
-    A --> D[Production\n1 member\nSlicing · Printer · Data]
-    A --> E[Design of Experiments\n1 member\nDoE · Testing · Evaluation]
-    A --> F[Documentation\n1 member\nReport + Presentation]
-    style C fill:#028090,color:#fff
-```
-
-> I was part of the **Product Design** sub-team — responsible for the initial CAD model in Fusion 360 and all topology optimization and FEA simulation work in SolidWorks.
+The project was divided across a 6-person team: Project Management (Gantt charts, milestones, documentation), **Product Design** (CAD, topology optimization, simulation), Production (slicing, printer operation, print data), Design of Experiments (DoE, testing, evaluation), and Documentation (report and presentation). I was part of the **Product Design** sub-team — responsible for the initial CAD model in Fusion 360 and all topology optimization and FEA simulation work in SolidWorks.
 
 ---
 
 ## Locking Mechanism — Koshikake Aritsugi
 
-The lab prohibited any adhesive or mechanical fastener. The only permitted connection was a **printed mechanical joint**. After researching joinery techniques, we selected the **Koshikake Aritsugi** — a stepped dovetailed splice joint from classical Japanese timber architecture. This joint interlocks in both bending and shear, making it structurally ideal for a midspan connection under 3-point loading.
-
-```mermaid
-flowchart LR
-    A[Joint Research] --> B{Options Evaluated}
-    B --> C[Butt Joint\n❌ No shear resistance]
-    B --> D[Simple Dovetail\n⚠️ Weak in bending]
-    B --> E[Koshikake Aritsugi\n✅ Stepped dovetail splice\nResists bending + shear]
-    E --> F[3D Printed & Tested\nFit and load-transfer verified]
-    F --> G[Integrated into Final Bridge Design]
-```
+The lab prohibited any adhesive or mechanical fastener. The only permitted connection was a **printed mechanical joint**. After researching joinery techniques — including butt joints (no shear resistance) and simple dovetails (weak in bending) — we selected the **Koshikake Aritsugi**, a stepped dovetailed splice joint from classical Japanese timber architecture. This joint interlocks in both bending and shear, making it structurally ideal for a midspan connection under 3-point loading. We 3D printed and tested the joint geometry before integrating it into the bridge design.
 
 | | |
 |---|---|
@@ -102,6 +82,9 @@ The first design was an arch bridge based on structural first principles. An arc
 
 ![Initial CAD design — Fusion 360](images/initial_design_cad.png)
 *Initial arch bridge design (Fusion 360) — organic hollowed arch form with integrated dovetail splice joint at midspan*
+
+![Initial printed prototype](images/initial_print.png)
+*First printed prototype of the initial design — used for preliminary fit checks and informal load testing*
 
 ---
 
@@ -128,10 +111,7 @@ flowchart TD
 
 Following topology optimization, a static Von Mises stress analysis was run on the optimized assembly to verify stress levels remained within acceptable limits under the expected 500 N load.
 
-**Key findings:**
-- Maximum stress concentrated at the midspan load application point and bearing contacts — expected for 3-point bending
-- The arch body remained in a low-stress regime throughout
-- No unexpected failure zones introduced by the material removal
+The simulation confirmed that maximum stress concentrated at the midspan load application point and bearing contacts — expected for 3-point bending. The arch body remained in a low-stress regime throughout, and no unexpected failure zones were introduced by the material removal.
 
 ![Von Mises stress simulation — SolidWorks](images/stress_simulation.png)
 *SolidWorks static analysis — Von Mises stress distribution under 3-point load. Stress peak at midspan and bearing contact points. Arch body shows low stress throughout.*
@@ -147,34 +127,18 @@ The topology-optimized model was finalized for printing. Key features of the fin
 - Koshikake Aritsugi joint retained and refined at midspan
 - Flat bearing pads at each end for clean contact with test fixture
 
-| | |
-|---|---|
-| ![Final CAD design — SolidWorks](images/final_design_cad.png) | ![Final assembled bridge](images/final_assembled_bridge.jpg) |
-| *Final bridge half — SolidWorks render. Lightening slots and dovetail joint visible.* | *Final printed and assembled bridge — two halves connected via Koshikake Aritsugi joint* |
+![Final CAD design — SolidWorks](images/final_design_cad.png)
+*Final bridge half — SolidWorks render. Lightening slots and dovetail joint visible.*
 
-![Final print — side view](images/final_print_side.jpg)
-*Side view of one bridge half — rectangular lightening slots and zigzag dovetail joint profile clearly visible in the printed PLA part*
+![Final printed bridge — side view](images/final_print_side.jpg)
+*Side view of the final printed bridge — rectangular lightening slots and zigzag dovetail joint profile clearly visible*
 
-![Final print — 3/4 view](images/final_print_half.jpg)
-*3/4 view — topology-optimized arch form with printed Koshikake Aritsugi joint at the splice point*
+![Final assembled bridge](images/final_print_half.jpg)
+*Final printed and assembled bridge — two halves connected via Koshikake Aritsugi joint. No adhesive or fasteners used.*
 
 ---
 
-## 3D Printing Process
-
-### Print Workflow
-
-```mermaid
-flowchart LR
-    A[Export STL\nfrom SolidWorks] --> B[Import into PrusaSlicer\nPrusa Mini+ profile]
-    B --> C[Set Parameters\nLayer height · Infill\nSpeed · Temperature · Supports]
-    C --> D[Generate G-code\nFinal bridge.bgcode]
-    D --> E[Transfer via USB\nto Prusa Mini+]
-    E --> F[Monitor First Layers\nAdhesion + Layer quality check]
-    F --> G[Autonomous Print\nPLA — 12h 4m]
-    G --> H[Post-Processing\nRemove supports\nQuality inspection]
-    H --> I[Assemble Bridge\nConnect two halves\nvia Koshikake Aritsugi joint]
-```
+## 3D Printing & Assembly
 
 ### Print Specifications
 
@@ -188,13 +152,13 @@ flowchart LR
 | Print time | 12 hours 4 minutes |
 | Final bridge mass | 172.6 g |
 
+The two bridge halves were exported as STL from SolidWorks, sliced in PrusaSlicer with the Prusa Mini+ profile, and printed in a single continuous job. After printing, supports were removed and the two halves were assembled by sliding the Koshikake Aritsugi joint together — no tools, glue, or fasteners required.
+
 ![Fresh off the Prusa Mini+](images/final_print_prusa.jpg)
 *Both bridge halves on the Prusa Mini+ build plate immediately after print completion — printer screen confirms: "Final bridge.bgcode — 100% — Printing time: 12h 4m"*
 
-### Assembly
-
 ![Assembly](images/assembly.gif)
-*Assembly of the two bridge halves via the Koshikake Aritsugi dovetailed splice joint — no tools, glue, or fasteners required*
+*Assembly of the two bridge halves via the Koshikake Aritsugi dovetailed splice joint*
 
 ---
 
@@ -207,12 +171,14 @@ Before the official lab test, the team performed informal load tests using dead 
 | | |
 |---|---|
 | ![Test — 3 kg](images/test_3kg.jpg) | ![Test — 5 kg](images/test_5kg.jpg) |
-| *Preliminary test — 3 kg load (~29 N). Bridge holds without visible deformation.* | *Preliminary test — 5 kg load (~49 N). No visible deformation. Design validated for higher loading.* |
+| *Preliminary test — 3 kg load (~29 N). No visible deformation.* | *Preliminary test — 5 kg load (~49 N). No visible deformation.* |
 
 ![Bridge after failure test](images/bridge_failure.jpg)
-*Bridge after preliminary failure testing — fracture propagated at midspan under increasing load*
+*Bridge after preliminary failure testing — fracture at midspan under increasing load*
 
-### Official Lab Test — 3-Point Loading (iLAS Testing Device)
+### Official Lab Test — 3-Point Loading
+
+The official test used the iLAS testing device: bridge resting on two fixed supports 300 mm apart, with controlled vertical force applied at midspan.
 
 ```mermaid
 flowchart TD
@@ -239,33 +205,18 @@ flowchart TD
 
 The bridge withstood the full 500 N test load without fracture. The strength-to-weight ratio of > 2.90 N/g is a lower bound — the actual structural capacity exceeds this figure since the bridge never reached its failure point.
 
-![Class results table](images/results_table.jpg)
+![Class results table](images/result_table.jpg)
 *Official iLAS 3D Printing Lab results — Group 7: 172.6 g, >500 N, strength-to-weight ratio >2.90 N/g*
 
 ---
 
 ## Design of Experiments (DoE)
 
-To determine optimal print settings before committing to the final bridge print, key parameters were systematically varied and evaluated.
-
-```mermaid
-flowchart TD
-    A[Define Variables] --> B[Print Parameters\nLayer height\nInfill density + pattern\nWall thickness\nPrint speed]
-    A --> C[Joint Parameters\nClearance values\nDovetail step dimensions]
-    B --> D[Print Test Specimens]
-    C --> D
-    D --> E[Test Each Specimen\nLoad + Visual inspection]
-    E --> F[Evaluate Results\nStrength · Print quality · Time]
-    F --> G[Select Optimal Settings\nfor Final Bridge Print]
-```
-
-Parameters varied during DoE included layer height, infill density, infill pattern, wall thickness, and print speed. Findings informed the final print configuration to balance structural performance with material efficiency.
+To determine optimal print settings before committing to the final bridge print, key parameters were systematically varied and evaluated. Test specimens were printed with different layer heights, infill densities, infill patterns, wall thicknesses, and print speeds. Each specimen was load-tested and visually inspected. The results informed the final print configuration, balancing structural performance with material efficiency.
 
 ---
 
 ## Cost Estimation
-
-A full time-cost breakdown was performed as part of the project documentation.
 
 ```mermaid
 pie title Total Project Cost — €84.49
@@ -304,19 +255,19 @@ pie title Total Project Cost — €84.49
 ├── README.md
 ├── images/
 │   ├── initial_design_cad.png            # Fusion 360 render — initial arch design
+│   ├── initial_print.png                 # First printed prototype
 │   ├── topology_optimization.png         # SolidWorks topology study result
 │   ├── stress_simulation.png             # Von Mises stress analysis
 │   ├── final_design_cad.png              # SolidWorks render — topology-optimized half
-│   ├── final_assembled_bridge.jpg        # Photo of assembled final bridge
 │   ├── final_print_side.jpg              # Side view — joint and slots detail
-│   ├── final_print_half.jpg              # 3/4 view of one bridge half
+│   ├── final_print_half.jpg              # Final assembled bridge — both halves joined
 │   ├── final_print_prusa.jpg             # Fresh off Prusa Mini+ build plate
 │   ├── dovetail_joint_disassembled.jpg   # Koshikake Aritsugi joint — open
 │   ├── dovetail_joint_assembled.jpg      # Koshikake Aritsugi joint — locked
 │   ├── test_3kg.jpg                      # Preliminary test — 3 kg load
 │   ├── test_5kg.jpg                      # Preliminary test — 5 kg load
 │   ├── bridge_failure.jpg                # Bridge after failure testing
-│   ├── results_table.jpg                 # Official iLAS class results
+│   ├── result_table.jpg                  # Official iLAS class results
 │   └── assembly.gif                      # Assembly of two halves via joint
 └── bridge_assembly.step                  # STEP file — full bridge assembly
 ```
