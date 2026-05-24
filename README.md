@@ -132,6 +132,7 @@ The topology-optimized model was finalized for printing. Key features of the fin
 - Flat bearing pads at each end for clean contact with test fixture
 
 ![Final CAD design — SolidWorks](images/final_design_cad.png)
+
 *Final bridge half — SolidWorks render. Lightening slots and dovetail joint visible.*
 
 ![Final printed bridge — side view](images/final_print_side.jpg)
