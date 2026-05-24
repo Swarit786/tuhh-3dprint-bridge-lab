@@ -179,6 +179,7 @@ Before the official lab test, the team performed informal load tests using dead 
 | *Preliminary test — 3 kg load (~29 N). No visible deformation.* | *Preliminary test — 5 kg load (~49 N). No visible deformation.* |
 
 ![Bridge after failure test](images/bridge_failure.jpg)
+
 *Bridge after preliminary failure testing — fracture at midspan under increasing load*
 
 ### Official Lab Test — 3-Point Loading
