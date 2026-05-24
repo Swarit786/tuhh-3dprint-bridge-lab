@@ -139,7 +139,7 @@ The topology-optimized model was finalized for printing. Key features of the fin
 
 *Final bridge half — SolidWorks render. Lightening slots and dovetail joint visible.*
 
-![Final printed bridge — side view](images/final_print_side.jpg)
+![Final printed bridge — side view](images/final_print_side_new.jpg)
 
 *Side view of the final printed bridge — rectangular lightening slots and zigzag dovetail joint profile clearly visible*
 
