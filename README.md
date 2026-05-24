@@ -84,6 +84,10 @@ The first design was an arch bridge based on structural first principles. An arc
 
 *Initial arch bridge design (Fusion 360) — organic hollowed arch form with integrated dovetail splice joint at midspan*
 
+![Assembly mechanism](images/assembly.gif)
+
+*Assembly of the two bridge halves via the Koshikake Aritsugi dovetailed splice joint — the two halves slide and lock together without any adhesive or fasteners*
+
 ![Initial printed prototype](images/initial_print.png)
 
 *First printed prototype of the initial design — used for preliminary fit checks and informal load testing*
@@ -136,9 +140,11 @@ The topology-optimized model was finalized for printing. Key features of the fin
 *Final bridge half — SolidWorks render. Lightening slots and dovetail joint visible.*
 
 ![Final printed bridge — side view](images/final_print_side.jpg)
+
 *Side view of the final printed bridge — rectangular lightening slots and zigzag dovetail joint profile clearly visible*
 
 ![Final assembled bridge](images/final_print_half.jpg)
+
 *Final printed and assembled bridge — two halves connected via Koshikake Aritsugi joint. No adhesive or fasteners used.*
 
 ---
@@ -160,10 +166,8 @@ The topology-optimized model was finalized for printing. Key features of the fin
 The two bridge halves were exported as STL from SolidWorks, sliced in PrusaSlicer with the Prusa Mini+ profile, and printed in a single continuous job. After printing, supports were removed and the two halves were assembled by sliding the Koshikake Aritsugi joint together — no tools, glue, or fasteners required.
 
 ![Fresh off the Prusa Mini+](images/final_print_prusa.jpg)
-*Both bridge halves on the Prusa Mini+ build plate immediately after print completion — printer screen confirms: "Final bridge.bgcode — 100% — Printing time: 12h 4m"*
 
-![Assembly](images/assembly.gif)
-*Assembly of the two bridge halves via the Koshikake Aritsugi dovetailed splice joint*
+*Both bridge halves on the Prusa Mini+ build plate immediately after print completion — printer screen confirms: "Final bridge.bgcode — 100% — Printing time: 12h 4m"*
 
 ---
 
@@ -212,6 +216,7 @@ flowchart TD
 The bridge withstood the full 500 N test load without fracture. The strength-to-weight ratio of > 2.90 N/g is a lower bound — the actual structural capacity exceeds this figure since the bridge never reached its failure point.
 
 ![Class results table](images/result_table.jpg)
+
 *Official iLAS 3D Printing Lab results — Group 7: 172.6 g, >500 N, strength-to-weight ratio >2.90 N/g*
 
 ---
@@ -262,6 +267,7 @@ pie title Total Project Cost — €84.49
 ├── images/
 │   ├── initial_design_cad.png            # Fusion 360 render — initial arch design
 │   ├── initial_print.png                 # First printed prototype
+│   ├── assembly.gif                      # Joint assembly mechanism
 │   ├── topology_optimization.png         # SolidWorks topology study result
 │   ├── stress_simulation.png             # Von Mises stress analysis
 │   ├── final_design_cad.png              # SolidWorks render — topology-optimized half
@@ -273,8 +279,7 @@ pie title Total Project Cost — €84.49
 │   ├── test_3kg.jpg                      # Preliminary test — 3 kg load
 │   ├── test_5kg.jpg                      # Preliminary test — 5 kg load
 │   ├── bridge_failure.jpg                # Bridge after failure testing
-│   ├── result_table.jpg                  # Official iLAS class results
-│   └── assembly.gif                      # Assembly of two halves via joint
+│   └── result_table.jpg                  # Official iLAS class results
 └── bridge_assembly.step                  # STEP file — full bridge assembly
 ```
 
