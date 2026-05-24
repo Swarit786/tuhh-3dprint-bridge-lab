@@ -81,9 +81,11 @@ The lab prohibited any adhesive or mechanical fastener. The only permitted conne
 The first design was an arch bridge based on structural first principles. An arch efficiently converts midspan load into compressive forces along its axis — well suited to 3-point bending. Bearing ends were hollowed to reduce mass while maintaining contact area with the test fixture. The Koshikake Aritsugi joint was integrated at midspan, splitting the bridge into two symmetrical halves.
 
 ![Initial CAD design — Fusion 360](images/initial_design_cad.png)
+
 *Initial arch bridge design (Fusion 360) — organic hollowed arch form with integrated dovetail splice joint at midspan*
 
 ![Initial printed prototype](images/initial_print.png)
+
 *First printed prototype of the initial design — used for preliminary fit checks and informal load testing*
 
 ---
@@ -103,6 +105,7 @@ flowchart TD
 ```
 
 ![Topology optimization result — SolidWorks](images/topology_optimization.png)
+
 *SolidWorks topology study — yellow regions are primary load paths (must retain), purple regions flagged for removal. Initial element mass: 0.2366 kg. Target: −70%.*
 
 ---
@@ -114,6 +117,7 @@ Following topology optimization, a static Von Mises stress analysis was run on t
 The simulation confirmed that maximum stress concentrated at the midspan load application point and bearing contacts — expected for 3-point bending. The arch body remained in a low-stress regime throughout, and no unexpected failure zones were introduced by the material removal.
 
 ![Von Mises stress simulation — SolidWorks](images/stress_simulation.png)
+
 *SolidWorks static analysis — Von Mises stress distribution under 3-point load. Stress peak at midspan and bearing contact points. Arch body shows low stress throughout.*
 
 ---
